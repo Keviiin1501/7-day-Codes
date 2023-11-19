@@ -43,10 +43,10 @@
 
         const nome = prompt("Qual o seu nome?");
         const idade = prompt("Quantos anos você tem?");
-        const linguagem = prompt("Qual linguagem de programação você está estudando?");
-        const msg = `"Olá ${nome}, você tem ${idade} anos e já está aprendendo ${linguagem}!"!`;
+        const lingua = prompt("Qual linguagem de programação você está estudando?");
+        const mensg = `"Olá ${nome}, você tem ${idade} anos e já está aprendendo ${lingua}!"!`;
 
-        alert(msg);
+        alert(mensg);
 
         const gosta = prompt(`Você gosta de estudar ${linguagem}? Responda com o número 1 - SIM ou 2 - NÃO`);
         if (gosta == 1) {
@@ -91,6 +91,184 @@
 
         // Fim do Terceiro Desafio
 
+        // Inicio do Quarto Desafio 
+        const numeroAdivinhacao = 7;
+        let chute = "";
+        let acertou = false;
+
+        for (let contador = 0; contador < 3; contador++) {
+            chute = prompt("Tente adivinhar o número de 0 a 10:");
+            if (chute == numeroAdivinhacao) {
+                alert(`Parabéns, você acertou! O número era ${numeroAdivinhacao}.`);
+                acertou = true;
+                break;
+            }
+            alert("Errado!");
+        }
+        if (!acertou) {
+            alert(`Infelizmente, você não acertou. O número era ${numeroAdivinhacao}!`);
+        }
+
+        //Fim do Quarto Desafio 
+
+        //Inicio do Quinto Desafio
+        let fruta = [];
+        let laticinio = [];
+        let doce = [];
+        let congelado = [];
+        let comidas = "";
+        let categorias = "";
+
+        let adicionarMais = "sim";  // valor inicial como "sim", porque a primeira vez sempre vai entrar no while
+        while (adicionarMais != "não") {
+            adicionarMais = prompt("Você deseja adicionar uma comida na lista de compras? Responda 'sim' ou 'não'.");
+            while (adicionarMais != "sim" && adicionarMais != "não") {  //enquanto o texto lido for diferente de "sim" e de "não", exibir que não foi reconhecido e perguntar novamente
+                alert(`Operação não reconhecida!`);
+                adicionarMais = prompt("Você deseja adicionar uma comida na lista de compras? Responda 'sim' ou 'não'.");
+            }
+
+            if (adicionarMais === "não") {  //se o texto lido for "não", sair do while
+                break;
+            }
+
+            comidas = prompt("Qual comida você deseja inserir?");
+            categorias = prompt("Em qual categoria essa comida se encaixa: 'frutas', 'laticínios', 'doces' ou 'congelados'?");
+            if (categorias === 'frutas') {
+                frutas.push(comidas);
+            } else if (categoria === 'laticínios') {
+                laticinios.push(comidas);
+            } else if (categoria === 'doces') {
+                doces.push(comidas);
+            } else if (categoria === 'congelados') {
+                congelados.push(comidas);
+            } else {
+                alert("Essa categoria não foi pré-definida.")
+            }
+        }
+        alert(`Lista de compras:\n  Frutas: ${frutas}\n  Laticínios: ${laticinios}\n  Doces: ${doces}\n  Congelados: ${congelados}`);
+
+        //Fim do Quinto Desafio
+
+        //Inicio do Sexto Desafio
+        let frutas = [];
+        let laticinios = [];
+        let doces = [];
+        let congelados = [];
+        let comida = "";
+        let categoria = "";
+        let remover = "";
+
+        let adicionar = "sim";  // valor inicial como "sim", porque a primeira vez sempre vai entrar no while
+        while (adicionarMais != "não") {
+            if (frutas.length === 0 && laticinios.length === 0 && doces.length === 0 && congelados.length === 0) {
+                adicionarMais = prompt("Você deseja adicionar uma comida na lista de compras? Responda 'sim' ou 'não'.");
+            } else {
+                adicionarMais = prompt("Você deseja adicionar uma comida na lista de compras? Responda 'sim', 'não' ou 'remover'.");
+            }
+
+            while (adicionarMais != "sim" && adicionarMais != "não" && adicionarMais != "remover") {  //enquanto o texto lido for diferente de "sim", "não" e "remover", exibir que não foi reconhecido e perguntar novamente
+                alert(`Operação não reconhecida!`);
+                adicionarMais = prompt("Você deseja adicionar uma comida na lista de compras? Responda 'sim' ou 'não'.");
+            }
+
+            if (adicionarMais === "não") {  //se o texto lido for "não", sair do while
+                break;
+            }
+
+            if (adicionarMais === "sim") {
+                comida = prompt("Qual comida você deseja inserir?");
+                categoria = prompt("Em qual categoria essa comida se encaixa: 'frutas', 'laticínios', 'doces' ou 'congelados'?");
+                if (categoria === 'frutas') {
+                    frutas.push(comida);
+                } else if (categoria === 'laticínios') {
+                    laticinios.push(comida);
+                } else if (categoria === 'doces') {
+                    doces.push(comida);
+                } else if (categoria === 'congelados') {
+                    congelados.push(comida);
+                } else {
+                    alert("Essa categoria não foi pré-definida.")
+                }
+            } else if (adicionarMais === "remover") {
+                if (frutas.length === 0 && laticinios.length === 0 && doces.length === 0 && congelados.length === 0) {  //se a lista estiver vazia (tratamento de bug, caso a pessoa digite "remover" mesmo quando forem exibidas apenas as opções "sim" e "não"
+                    alert(`A lista está vazia!`);
+                } else {  //se a lista não estiver vazia
+                    remover = prompt(`Lista de compras:\n  Frutas: ${frutas}\n  Laticínios: ${laticinios}\n  Doces: ${doces}\n  Congelados: ${congelados}\n\nQual produto você deseja remover?`);
+                    if (frutas.indexOf(remover) != -1) {
+                        frutas.splice(frutas.indexOf(remover), 1);
+                        alert(`O item ${remover} foi removido com sucesso!`)
+                    } else if (laticinios.indexOf(remover) != -1) {
+                        laticinios.splice(laticinios.indexOf(remover), 1);
+                        alert(`O item ${remover} foi removido com sucesso!`)
+                    } else if (doces.indexOf(remover) != -1) {
+                        doces.splice(doces.indexOf(remover), 1);
+                        alert(`O item ${remover} foi removido com sucesso!`)
+                    } else if (congelados.indexOf(remover) != -1) {
+                        congelados.splice(congelados.indexOf(remover), 1);
+                        alert(`O item ${remover} foi removido com sucesso!`)
+                    } else {
+                        alert(`Não foi possível encontrar o item dentro da lista!`)
+                    }
+                }
+            }
+        }
+        alert(`Lista de compras:\n  Frutas: ${frutas}\n  Laticínios: ${laticinios}\n  Doces: ${doces}\n  Congelados: ${congelados}`);
+
+        //Fim do sexto Desafio
+
+        //Incio do Setimo Desafio
+        function soma(valor1, valor2) {
+            return Number(valor1) + Number(valor2);
+        }
+
+        function subtracao(valor1, valor2) {
+            return Number(valor1) - Number(valor2);
+        }
+
+        function multiplicacao(valor1, valor2) {
+            return Number(valor1) * Number(valor2);
+        }
+
+        function divisao(valor1, valor2) {
+            return Number(valor1) / Number(valor2);
+        }
+
+        let valor1;
+        let valor2;
+        let operacao = "";
+
+        do {  //usando o 'do...while', já que a primeira vez sempre vamos entrar
+
+            operacao = prompt(`Qual operação você quer realizar? Responda 'soma', 'subtração', 'multiplicação', 'divisão' ou 'sair'.`);
+            while (operacao != "soma" && operacao != "subtração" && operacao != "multiplicação" && operacao != "divisão" && operacao != "sair") {  //enquanto o texto lido for diferente de "soma", "subtração", "multiplicação", "divisão" e "sair", exibir que não foi reconhecido e perguntar novamente
+                alert(`Operação não reconhecida!`);
+                operacao = prompt(`Qual operação você quer realizar? Responda 'soma', 'subtração', 'multiplicação', 'divisão' ou 'sair'.`);
+            }
+
+            if (operacao === "sair") {  //se o texto lido for "sair", sair do loop e da calculadora
+                break;
+            }
+
+            valor1 = prompt(`Insira o primeiro valor:`);
+            valor2 = prompt(`Insira o segundo valor:`);
+            switch (operacao) {
+                case 'soma':
+                    alert(`O resultado da ${operacao} é ${soma(valor1, valor2)}`);
+                    break;
+                case 'subtração':
+                    alert(`O resultado da ${operacao} é ${subtracao(valor1, valor2)}`);
+                    break;
+                case 'multiplicação':
+                    alert(`O resultado da ${operacao} é ${multiplicacao(valor1, valor2)}`);
+                    break;
+                case 'divisão':
+                    alert(`O resultado da ${operacao} é ${divisao(valor1, valor2)}`);
+                    break;
+            }
+        } while (operacao === "soma" || operacao === "subtração" || operacao === "multiplicação" || operacao === "divisão")
+        alert(`Até a próxima!`);
+
+        //Fim do Setimo Desafio 
     </script>
 
 </body>
