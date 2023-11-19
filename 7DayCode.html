@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7 day Code Teste</title>
 </head>
+
 <body>
     <h1>Teste de Copilador</h1>
 
@@ -13,55 +15,84 @@
         let numeroUm = 1
         let stringUm = '1'
         let numeroTrinta = 30
-        let stringeTrinta ='30'
+        let stringeTrinta = '30'
         let numeroDez = 10
         let stringDez = '10'
 
-        if(numeroUm == stringUm) {
+        if (numeroUm == stringUm) {
             console.log('As variaveis numeroUm e stringUm tem o mesmo valor, mas tipos diferentes')
-        }else {
+        } else {
             console.log('As variáveis numeroUm e stringUm não tem o mesmo valor ')
-         }
+        }
 
 
-        if(numeroTrinta == stringeTrinta) {
+        if (numeroTrinta == stringTrinta) {
             console.log('As variaveis numeroDez e stringeDez tem o mesmo valor e mesmo tipo')
-        }else {
+        } else {
             console.log('As variaveis numeroTrinta e stringTrinta não tem o mesmo tipo')
         }
 
         if (numeroDez == stringDez) {
             console.log('As variaveis numeroDez e stringDez tem o mesmo valorr, mas tipos diferentes ')
-        }else {
+        } else {
             console.log('As variaveis numeroDez e stringDez não tem o mesmo valor')
         }
-            // Fim Do Primeiro Desafio
+        // Fim Do Primeiro Desafio
 
-            //Incio do Segundo Desafio
-        
-            const nome = prompt("Qual o seu nome?");
-            const idade = prompt("Quantos anos você tem?");
-            const linguagem = prompt("Qual linguagem de programação você está estudando?");
-            const msg = `"Olá ${nome}, você tem ${idade} anos e já está aprendendo ${linguagem}!"!`;
+        //Incio do Segundo Desafio
 
-            alert(msg);
+        const nome = prompt("Qual o seu nome?");
+        const idade = prompt("Quantos anos você tem?");
+        const linguagem = prompt("Qual linguagem de programação você está estudando?");
+        const msg = `"Olá ${nome}, você tem ${idade} anos e já está aprendendo ${linguagem}!"!`;
 
-            const gosta = prompt(`Você gosta de estudar ${linguagem}? Responda com o número 1 - SIM ou 2 - NÃO`);
-        if (gosta == 1){
+        alert(msg);
+
+        const gosta = prompt(`Você gosta de estudar ${linguagem}? Responda com o número 1 - SIM ou 2 - NÃO`);
+        if (gosta == 1) {
             alert("Muito bom! Continue estudando e você terá muito sucesso.");
-            }
-            if (gosta == 2){
-                alert("Ahh que pena... Já tentou aprender outras linguagens?");
-            }
+        }
+        if (gosta == 2) {
+            alert("Ahh que pena... Já tentou aprender outras linguagens?");
+        }
 
         // Fim do Segundo Desafio
 
         //Incio do Terceiro Desafio
+        const area = prompt("Você quer seguir para área de 'Front-End' ou de 'Back-End'? Digite o nome da área:");
+        let linguagem = "";
+        if (area === "Front-End") {
+            linguagem = prompt("Você quer aprender React ou Vue?");
+        }
+        else if (area === "Back-End") {
+            linguagem = prompt("Você quer aprender C# ou Java?");
+        }
+        else {
+            alert("Você não inseriu uma área válida!");
+        }
 
+        const especialidadeOuFullstack = prompt("Digite 1 para seguir se especializando na área escolhida ou 2 para seguir se desenvolvendo para se tornar Fullstack");
+        if (especialidadeOuFullstack == 1) {
+            alert(`Continue se especializando em ${linguagem} para dominar a área de ${area}!`);
+        }
+        else if (especialidadeOuFullstack == 2) {
+            alert(`Chegou a hora de começar a aprender outras linguagens além de ${linguagem} se você quer se tornar Fullstack!`);
+        }
+        else {
+            alert("Você não inseriu um valor válido!");
+        }
 
+        let msg = prompt("Tem mais alguma tecnologia que você gostaria de aprender? Digite 'ok' em caso positivo.");
+        while (msg === "ok") {
+            let novaTecnologia = prompt("Qual?");
+            alert(`${novaTecnologia} é realmente uma tecnologia muito legal!`)
+            msg = prompt("Tem mais alguma tecnologia que você gostaria de aprender? Digite 'ok' em caso positivo.");
+        }
 
+        // Fim do Terceiro Desafio
 
     </script>
 
 </body>
+
 </html>
